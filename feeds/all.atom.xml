@@ -56,9 +56,12 @@ chmod 700 &lt;span class="cp"&gt;${&lt;/span&gt;&lt;span class="n"&gt;HOME&lt;/s
 
 
 &lt;p&gt;Si ma disposition clavier ne vous convient pas, vous pouvez partir du jeu de configuration i3 par défaut
-en remplaçant les deux commandes "ln" précédentes par celles-ci:
-    ln -s ${HOME}/shell/switchKey/i3/default/config_AZERTY ${HOME}/.i3/config_AZERTY
-    ln -s ${HOME}/shell/switchKey/i3/default/config_BEPO ${HOME}/.i3/config_BEPO&lt;/p&gt;
+en remplaçant les deux commandes "ln" précédentes par celles-ci:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ln -s &lt;span class="cp"&gt;${&lt;/span&gt;&lt;span class="n"&gt;HOME&lt;/span&gt;&lt;span class="cp"&gt;}&lt;/span&gt;/shell/switchKey/i3/default/config_AZERTY &lt;span class="cp"&gt;${&lt;/span&gt;&lt;span class="n"&gt;HOME&lt;/span&gt;&lt;span class="cp"&gt;}&lt;/span&gt;/.i3/config_AZERTY
+ln -s &lt;span class="cp"&gt;${&lt;/span&gt;&lt;span class="n"&gt;HOME&lt;/span&gt;&lt;span class="cp"&gt;}&lt;/span&gt;/shell/switchKey/i3/default/config_BEPO &lt;span class="cp"&gt;${&lt;/span&gt;&lt;span class="n"&gt;HOME&lt;/span&gt;&lt;span class="cp"&gt;}&lt;/span&gt;/.i3/config_BEPO
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;h3&gt;Utilisation&lt;/h3&gt;
 &lt;p&gt;À l'usage, c'est très simple, il suffit lancer le script sans aucun paramètre ou de relancer la session.
 Une fois le script lancé une première fois faite "espace" + "p" (mappage azerty) pour basculer d'un clavier à l'autre.&lt;/p&gt;</content><category term="bash"></category><category term="bepo"></category><category term="azerty"></category><category term="i3"></category><category term="xcape"></category><category term="xmodmap"></category></entry><entry><title>Edito d'avril 2017</title><link href="/blog/2017/04/19/20170419-edito/" rel="alternate"></link><published>2017-04-19T21:00:00+02:00</published><updated>2017-04-19T21:00:00+02:00</updated><author><name>Sklaxs</name></author><id>tag:None,2017-04-19:/blog/2017/04/19/20170419-edito/</id><summary type="html">&lt;p&gt;&lt;img align="middle" alt "voyage-mouche-ballon-ciel-sunset-1756150 from pixabay.com" src="./images/20170411_editoAvril2017.jpg" width=80%&gt;&lt;/p&gt;

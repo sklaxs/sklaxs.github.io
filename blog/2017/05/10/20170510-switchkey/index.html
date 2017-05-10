@@ -145,9 +145,12 @@ chmod 700 <span class="cp">${</span><span class="n">HOME</span><span class="cp">
 
 
 <p>Si ma disposition clavier ne vous convient pas, vous pouvez partir du jeu de configuration i3 par défaut
-en remplaçant les deux commandes "ln" précédentes par celles-ci:
-    ln -s ${HOME}/shell/switchKey/i3/default/config_AZERTY ${HOME}/.i3/config_AZERTY
-    ln -s ${HOME}/shell/switchKey/i3/default/config_BEPO ${HOME}/.i3/config_BEPO</p>
+en remplaçant les deux commandes "ln" précédentes par celles-ci:</p>
+<div class="highlight"><pre><span></span>ln -s <span class="cp">${</span><span class="n">HOME</span><span class="cp">}</span>/shell/switchKey/i3/default/config_AZERTY <span class="cp">${</span><span class="n">HOME</span><span class="cp">}</span>/.i3/config_AZERTY
+ln -s <span class="cp">${</span><span class="n">HOME</span><span class="cp">}</span>/shell/switchKey/i3/default/config_BEPO <span class="cp">${</span><span class="n">HOME</span><span class="cp">}</span>/.i3/config_BEPO
+</pre></div>
+
+
 <h3>Utilisation</h3>
 <p>À l'usage, c'est très simple, il suffit lancer le script sans aucun paramètre ou de relancer la session.
 Une fois le script lancé une première fois faite "espace" + "p" (mappage azerty) pour basculer d'un clavier à l'autre.</p>
