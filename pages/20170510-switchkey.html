@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="A Page in : switchKey.sh" />
+    <meta name="author" content="sklaxs" />
+    <meta name="generator" content="Pelican (VoidyBootstrap theme)" />
+
+    <title>switchKey.sh - sklaxs blog</title>
+
+   
+        <link rel="stylesheet"
+              href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+              integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+              crossorigin="anonymous" />
+      <link rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+            integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+            crossorigin="anonymous">
+
+
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js" integrity="sha384-FFgGfda92tXC8nCNOxrCQ3R8x1TNkMFqDZVQdDaaJiiVbjkPBXIJBx0o7ETjy8Bh" crossorigin="anonymous"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js" integrity="sha384-ZoaMbDF+4LeFxg6WdScQ9nnR1QC2MIRxA1O9KWEXQwns1G8UNyIEZIQidzb0T1fo" crossorigin="anonymous"></script>
+    <![endif]-->
+
+    <link rel="shortcut icon" href="/favicon.ico" />
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="sklaxs blog Atom Feed" />
+  </head>
+
+  <body>
+   
+    <nav class="navbar navbar-default">
+      <div class="container">
+	   <div class="navbar-header">
+		<button type="button" class="navbar-toggle" 
+				data-toggle="collapse" data-target="#main-navbar-collapse">
+		  <span class="sr-only">Toggle navigation</span>
+		  <span class="icon-bar"></span>
+		  <span class="icon-bar"></span>
+		  <span class="icon-bar"></span>
+		</button>
+		<a class="navbar-brand" href="/" rel="home">
+          <i class="fa fa-home fa-fw fa-lg"> </i> </a>
+       </div>
+
+      <div class="collapse navbar-collapse" id="main-navbar-collapse">
+        <ul class="nav navbar-nav">
+              <li class="active">
+                <a href="/pages/20170510-switchkey.html">switchKey.sh</a>
+              </li>
+            <li class="divider"></li>
+            <li class="">
+              <a href="/archives.html">Archives</a>
+            </li>
+          <li class="divider"></li>
+            <li><a href="/feeds/all.atom.xml" 
+                   type="application/atom+xml" rel="alternate">
+                <i class="fa fa-rss fa-fw fa-lg"></i> </a></li>
+        </ul> <!-- /nav -->
+      </div> <!-- /navbar-collapse -->
+	  </div> <!-- /container -->
+    </nav> <!-- /navbar -->
+
+	<div class="jumbotron" id="overview">
+	  <div class="container">
+		<h1><a href="/">sklaxs blog</a></h1>
+	  </div>
+	</div>
+
+    <div class="container" id="main-container">
+      <div class="row">
+        <div class="col-md-9" id="content">
+<article itemscope="itemscope" 
+         itemtype="http://schema.org/WebPage">
+  <header>
+    <h1 itemprop="name headline">switchKey.sh</h1>
+  </header>
+  <div class="content-body" itemprop="text">
+    <p><img align="middle" alt "voyage-mouche-ballon-ciel-sunset-1756150 from pixabay.com" src="./images/20170510_switchKey.jpg" width=80%></p>
+<h1>Introduction</h1>
+<p>Comme introduit la semaine dernière, je change de window manager pour Linux. Des "window manager" j'en ai testé plusieurs depuis les quelques années où j'ai débuté sur Linux dont les principaux furent gnome, gnome-shell, xfce et enlightment. Sauf que maintenant, je suis confronté à l'un des maux de notre métier "la tendinite". J'ai donc pris le pas il y a 2 ans d'apprendre la disposition bépo. Utilisateur régulier de Windows, je ne peux que saluer la bonne intégration de ce mappage clavier sur cet OS en ce qui concerne les raccourcis. Malheureusement, sous Linux, il en est tout autrement pour ne citer que le plus handicapant le copier-coller imposant de composer avec ses deux mains pour l'utiliser. Mes recherches ne m'ont pas encore permises d'éditer efficacement ces raccourcis pour les faire coller à nos habituels raccourcis azerty.</p>
+<p>Aussi, je prends maintenant le parti de changer de Window manager pour un limitant au maximum mon usage de la souris. Mon choix s'est porté rapidement sur i3. Les points suivants traiteront de ma réflexion ayant emmené à la création de switchKey.sh tout en détaillant quelques éléments de ce script pouvant être repris indépendamment.</p>
+<h2>Qu'est-ce que "i3"</h2>
+<p>Pour les gens qui entendraient ce nom pour la première foi, je ne fais pas référence ici a processeur ou une célèbre voiture allemande, mais à un environnement de bureau du monde Unix dont la particularité est de ne pas utiliser de fenêtres flottantes (sauf rares exceptions). En effet, une application prend par défaut tout l'espace disponible, l'ouverture d'une seconde application scinde l'écran en deux ou se met sous forme d'onglet. Cette philosophie limite énormément l'usage de la souris au profit de raccourcis clavier.</p>
+<h1>Mon besoin</h1>
+<p>Mais un tuning s'imposait :
+- changer de «modificateur» (c'est la touche qui sert aux raccourcis d'i3) car les touches «alt» ou «windows» proposées par l'environnement imposant là aussi une forte contorsion de la main
+- changer les raccourcis par défaut qui utilise trop la combinaison «shift» + «modificateur»
+- permettre de switcher rapidement entre une dispo azerty et bepo pour par exemple passer la main à un autre utilisateur ou (c'est ici mon besoin) pouvoir saisir mes mots de passe en azerty.</p>
+<h1>Changement des racourcis</h1>
+<h2>Identification du nouveau mappage</h2>
+<p>Ici, on traite du sujet le plus accessible : la révision du mappage des raccourcis d'i3. Comme un bon dessin vaux mieux qu'un long discourt, voici le mappage que j'ai défini dans ma configuration d'i3 avec le modifier "space":
+<img align="middle" alt "i3 personal configuration with space modifier" src="./images/i3_space.png" width=80%></p>
+<p>Avec la combinaison "shift + space":
+<img align="middle" alt "i3 personal configuration with space modifier" src="./images/i3_shift_space.png" width=80%></p>
+<p>Et enfin, avec le modifier "alt":
+<img align="middle" alt "i3 personal configuration with space modifier" src="./images/i3_alt.png" width=80%></p>
+<p>Vous pourrez remarquer que j'utilise au minimum les touches combinatoires imposant des positions de la main peu naturelles (sauf alt+shit+² car il s'agit ici d'un raccourci que l'on est sensé lancer "par erreur")</p>
+<h1>Un peu de technique si nécessaire…</h1>
+<h2>Changement de modificateur</h2>
+<p>Comme je vous le disais précédemment, l'usage d' «alt» ou «windows» comme touche de raccourcis i3 ne me plaisait pas de plus, il était hors de question de la remplacer par la touche «Carl », car ce n'aurais été que déplacer le problème. J'ai donc choisi la barre espace !</p>
+<p>Certains diront ", C'est bien joli, la barre espace, mais c'est un peu utile, genre un mot sur deux". Ils ont raison, c'est pourquoi j'ai utilisé le petit programme xcape dont l'installation est très bien expliquée sur le github de son concepteur : https://github.com/alols/xcape.</p>
+<p>Ensuite, à l'usage, c'est très simple :
+    keycodeNumber="65" #keycode de la touche a laquelle on souhaite affecter une seconde fonction obtenu via l'utilitaire «xev»
+    simulatedKey="Hyper_L" #caractère à générer lors de l’appui simultané de la touche avec une autre;
+    regularKey="space" #caractère à générer lors d'un usage non simultané de la touche
+    xmodmap -e "keycode ${keycodeNumber} = ${simulatedKey}"
+    xmodmap -e "keycode any = ${regularKey}"
+    xcape -e "${simulatedKey}=${regularKey}"</p>
+<h2>SwitchKey</h2>
+<p>Pour permettre d'alterner entre deux configurations clavier (ici azerty / bépo), j'ai réalisé un petit script qui réalise les actions suivantes :
+- définition de la barre espace comme "modificateur"
+- identification du mappage clavier actuel
+- bascule vers le clavier opposé avec un simple "setxkbmap"(sauf au démar rage pour forcer la bascule en bépo)
+- mise en place du fichier de configuration d'i3 adapté à la nouvelle disposition
+- si bépo, modification de la touche "alt-gr" pour que le caractère "_" soit réalisé par une simple pression de cette touche.</p>
+<h3>Installation</h3>
+<p>Dans un premier temps (si vous ne l'avez pas déjà fait), installer xcape comme détaillé ici -&gt;  https://github.com/alols/xcape</p>
+<p>Ensuite dérouler les commandes suivantes
+    cd ${HOME}
+    mkdir shell &amp;&amp; cd shell
+    git clone https://github.com/sklaxs/switchKey.git
+    ln -s ${HOME}/shell/switchKey/i3/config_AZERTY ${HOME}/.i3/config_AZERTY
+    ln -s ${HOME}/shell/switchKey/i3/config_BEPO ${HOME}/.i3/config_BEPO
+    echo "${HOME}/shell/switchKey/switchKey.sh" &gt;&gt; ${HOME}/.profile
+    chmod 700 ${HOME}/shell/switchKey/switchKey.sh</p>
+<p>Si ma disposition clavier ne vous convient pas, vous pouvez partir du jeu de configuration i3 par défaut
+en remplaçant les deux commandes "ln" précédentes par celles-ci:
+    ln -s ${HOME}/shell/switchKey/i3/default/config_AZERTY ${HOME}/.i3/config_AZERTY
+    ln -s ${HOME}/shell/switchKey/i3/default/config_BEPO ${HOME}/.i3/config_BEPO</p>
+<h3>Utilisation</h3>
+<p>À l'usage, c'est très simple, il suffit lancer le script sans aucun paramètre ou de relancer la session.
+Une fois le script lancé une première fois faite "espace" + "p" (mappage azerty) pour basculer d'un clavier à l'autre.</p>
+  </div>
+
+
+</article>
+        </div><!-- /content -->
+
+        <div class="col-md-3 sidebar-nav" id="sidebar">
+
+<div class="row">
+
+<div class="col-xs-6 col-md-12">
+<h4><i class="fa fa-comment fa-fw fa-lg"></i> Social</h4>
+<ul class="list-unstyled social-links">
+    <li><a href="https://twitter.com/sklaxs" target="_blank">
+	  <i class="fa-fa-twitter-square fa-fw-fa-lg" title="twitter"></i>
+		twitter
+	</a></li>
+    <li><a href="http://github.com.sklaxs" target="_blank">
+	  <i class="fa-fa-github-square fa-fw-fa-lg" title="GitHub"></i>
+		GitHub
+	</a></li>
+</ul>
+</div>
+
+<div class="col-xs-6 col-md-12">
+<h4><i class="fa fa-folder fa-fw fa-lg"></i> Categories</h4>
+<ul class="list-unstyled category-links">
+  <li><a href="/category/edito.html" >
+    <i class="fa fa-folder-open fa-fw fa-lg"></i> Edito</a></li>
+</ul>
+</div>
+
+</div> <!-- /row -->
+
+
+<h4><i class="fa fa-rss fa-fw fa-lg"></i> Feeds</h4>
+<ul class="list-unstyled">
+    <li><a href="/feeds/all.atom.xml" 
+		   type="application/atom+xml" rel="alternate">
+		<i class="fa fa-rss-square fa-fw fa-lg"></i> Atom Feed</a></li>
+</ul>
+
+<hr />
+
+        </div><!--/sidebar -->
+      </div><!--/row-->
+    </div><!--/.container /#main-container -->
+
+    <footer id="site-footer">
+ 
+      <address id="site-colophon">
+        <p class="text-center text-muted">
+        Site built using <a href="http://getpelican.com/" target="_blank">Pelican</a>
+        &nbsp;&bull;&nbsp; Theme based on
+        <a href="http://www.voidynullness.net/page/voidy-bootstrap-pelican-theme/"
+           target="_blank">VoidyBootstrap</a> by 
+        <a href="http://www.robertiwancz.com/"
+           target="_blank">RKI</a>  
+        </p>
+      </address><!-- /colophon  -->
+    </footer>
+
+
+    <!-- javascript -->
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+
+
+  </body>
+</html>
