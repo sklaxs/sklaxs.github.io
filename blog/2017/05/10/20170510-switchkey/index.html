@@ -114,13 +114,16 @@
 <h2>Changement de modificateur</h2>
 <p>Comme je vous le disais précédemment, l'usage d' «alt» ou «windows» comme touche de raccourcis i3 ne me plaisait pas de plus, il était hors de question de la remplacer par la touche «Carl », car ce n'aurais été que déplacer le problème. J'ai donc choisi la barre espace !</p>
 <p>Certains diront ", C'est bien joli, la barre espace, mais c'est un peu utile, genre un mot sur deux". Ils ont raison, c'est pourquoi j'ai utilisé le petit programme xcape dont l'installation est très bien expliquée sur le github de son concepteur : https://github.com/alols/xcape.</p>
-<p>Ensuite, à l'usage, c'est très simple :
-    keycodeNumber="65" #keycode de la touche a laquelle on souhaite affecter une seconde fonction obtenu via l'utilitaire «xev»
-    simulatedKey="Hyper_L" #caractère à générer lors de l’appui simultané de la touche avec une autre;
-    regularKey="space" #caractère à générer lors d'un usage non simultané de la touche
-    xmodmap -e "keycode ${keycodeNumber} = ${simulatedKey}"
-    xmodmap -e "keycode any = ${regularKey}"
-    xcape -e "${simulatedKey}=${regularKey}"</p>
+<p>Ensuite, à l'usage, c'est très simple :</p>
+<div class="highlight"><pre><span></span>keycodeNumber=&quot;65&quot; #keycode de la touche a laquelle on souhaite affecter une seconde fonction obtenu via l&#39;utilitaire «xev»
+simulatedKey=&quot;Hyper_L&quot; #caractère à générer lors de l’appui simultané de la touche avec une autre;
+regularKey=&quot;space&quot; #caractère à générer lors d&#39;un usage non simultané de la touche
+xmodmap -e &quot;keycode <span class="cp">${</span><span class="n">keycodeNumber</span><span class="cp">}</span> = <span class="cp">${</span><span class="n">simulatedKey</span><span class="cp">}</span>&quot;
+xmodmap -e &quot;keycode any = <span class="cp">${</span><span class="n">regularKey</span><span class="cp">}</span>&quot;
+xcape -e &quot;<span class="cp">${</span><span class="n">simulatedKey</span><span class="cp">}</span>=<span class="cp">${</span><span class="n">regularKey</span><span class="cp">}</span>&quot;
+</pre></div>
+
+
 <h2>SwitchKey</h2>
 <p>Pour permettre d'alterner entre deux configurations clavier (ici azerty / bépo), j'ai réalisé un petit script qui réalise les actions suivantes :
 - définition de la barre espace comme "modificateur"
@@ -130,14 +133,17 @@
 - si bépo, modification de la touche "alt-gr" pour que le caractère "_" soit réalisé par une simple pression de cette touche.</p>
 <h3>Installation</h3>
 <p>Dans un premier temps (si vous ne l'avez pas déjà fait), installer xcape comme détaillé ici -&gt;  https://github.com/alols/xcape</p>
-<p>Ensuite dérouler les commandes suivantes
-    cd ${HOME}
-    mkdir shell &amp;&amp; cd shell
-    git clone https://github.com/sklaxs/switchKey.git
-    ln -s ${HOME}/shell/switchKey/i3/config_AZERTY ${HOME}/.i3/config_AZERTY
-    ln -s ${HOME}/shell/switchKey/i3/config_BEPO ${HOME}/.i3/config_BEPO
-    echo "${HOME}/shell/switchKey/switchKey.sh" &gt;&gt; ${HOME}/.profile
-    chmod 700 ${HOME}/shell/switchKey/switchKey.sh</p>
+<p>Ensuite dérouler les commandes suivantes</p>
+<div class="highlight"><pre><span></span>cd <span class="cp">${</span><span class="n">HOME</span><span class="cp">}</span>
+mkdir shell <span class="err">&amp;&amp;</span> cd shell
+git clone https://github.com/sklaxs/switchKey.git
+ln -s <span class="cp">${</span><span class="n">HOME</span><span class="cp">}</span>/shell/switchKey/i3/config_AZERTY <span class="cp">${</span><span class="n">HOME</span><span class="cp">}</span>/.i3/config_AZERTY
+ln -s <span class="cp">${</span><span class="n">HOME</span><span class="cp">}</span>/shell/switchKey/i3/config_BEPO <span class="cp">${</span><span class="n">HOME</span><span class="cp">}</span>/.i3/config_BEPO
+echo &quot;<span class="cp">${</span><span class="n">HOME</span><span class="cp">}</span>/shell/switchKey/switchKey.sh&quot; &gt;&gt; <span class="cp">${</span><span class="n">HOME</span><span class="cp">}</span>/.profile
+chmod 700 <span class="cp">${</span><span class="n">HOME</span><span class="cp">}</span>/shell/switchKey/switchKey.sh
+</pre></div>
+
+
 <p>Si ma disposition clavier ne vous convient pas, vous pouvez partir du jeu de configuration i3 par défaut
 en remplaçant les deux commandes "ln" précédentes par celles-ci:
     ln -s ${HOME}/shell/switchKey/i3/default/config_AZERTY ${HOME}/.i3/config_AZERTY
