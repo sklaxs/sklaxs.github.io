@@ -92,14 +92,14 @@
   <div class="content-body" itemprop="text articleBody">
 	<p><img align="middle" alt "sbires-drôle-double-banane-fun-1398000 from pixabay.com" src="https://sklaxs.github.io/images/20170510_switchKey.jpg" width=80%></p>
 <h1>Introduction</h1>
-<p>Comme introduit sur mon premier post, je change de window manager pour Linux. Des "window manager" j'en ai testé plusieurs depuis les quelques années où j'ai débuté sur Linux dont les principaux furent gnome, gnome-shell, xfce et enlightment. Sauf que maintenant, je suis confronté à l'un des maux de notre métier "la tendinite". J'ai donc pris le pas il y a 2 ans d'apprendre la disposition bépo. Utilisateur régulier de Windows, je ne peux que saluer la bonne intégration de ce mappage clavier sur cet OS en ce qui concerne les raccourcis. Malheureusement, sous Linux, il en est tout autrement pour ne citer que le plus handicapant le copier-coller imposant de composer avec ses deux mains pour l'utiliser. Mes recherches ne m'ont pas encore permises d'éditer efficacement ces raccourcis pour les faire coller à nos habituels raccourcis azerty.</p>
-<p>Aussi, je prends maintenant le parti de changer de Window manager pour un limitant au maximum mon usage de la souris. Mon choix s'est porté rapidement sur i3. Les points suivants traiteront de ma réflexion ayant emmené à la création de switchKey.sh tout en détaillant quelques éléments de ce script pouvant être repris indépendamment.</p>
+<p>Comme introduit sur mon premier post, je change de window manager pour Linux. Des "window manager" j'en ai testé plusieurs ces précédentes années. Pour m'arrêter depuis quelques temps sur XFCE. Mais maintenant, je suis confronté à l'un des maux de notre époque "la tendinite". J'ai donc pris le pas il y a 2 ans d'apprendre la disposition <a href="https://bepo.fr">bépo</a> pour me soulager. Utilisateur régulier de Windows pour mon travail, mon changement de clavier n'a pas fait évoluer les raccourcis que j'utilise courament. Malheureusement, sous Linux, il en est tout autrement car les touches de racourcis suivent le mappage du clavier; pour ne citer que le plus handicapant le copier-coller impose l'usage de ses deux mains (CTRL + H, CTRL + U). Mes recherches ne m'ont pas encore permises d'éditer efficacement ces raccourcis pour les faire coller à nos habituels raccourcis azerty.</p>
+<p>Aussi, je prends maintenant le parti de changer de Window manager pour limiter au maximum mon usage de la souris et ainsi garder mes deux mains sur mon clavier. Mon choix s'est porté rapidement sur <a href="https://i3wm.org/">i3</a>. Les points suivants traiteront de ma réflexion ayant emmené à la création de switchKey.sh tout en détaillant quelques éléments de ce script pouvant être repris indépendamment pour enfin terminer sur son installation.</p>
 <h2>Qu'est-ce que "i3"</h2>
 <p>Pour les gens qui entendraient ce nom pour la première foi, je ne fais pas référence ici a processeur ou une célèbre voiture allemande, mais à un environnement de bureau du monde Unix dont la particularité est de ne pas utiliser de fenêtres flottantes (sauf rares exceptions). En effet, une application prend par défaut tout l'espace disponible, l'ouverture d'une seconde application scinde l'écran en deux ou se met sous forme d'onglet. Cette philosophie limite énormément l'usage de la souris au profit de raccourcis clavier.</p>
 <h1>Mon besoin</h1>
 <p>Mais un tuning s'imposait :
-- changer de «modificateur» (c'est la touche qui sert aux raccourcis d'i3) car les touches «alt» ou «windows» proposées par l'environnement imposant là aussi une forte contorsion de la main
-- changer les raccourcis par défaut qui utilise trop la combinaison «shift» + «modificateur»
+- changer de «modificateur» (c'est la touche qui sert aux raccourcis d'i3) car les touches «alt» ou «windows» proposées par l'environnement impose là aussi une forte contorsion de la main;
+- changer les raccourcis par défaut qui utilisent trop la combinaison «shift» + «modificateur»;
 - permettre de switcher rapidement entre une dispo azerty et bepo pour par exemple passer la main à un autre utilisateur ou (c'est ici mon besoin) pouvoir saisir mes mots de passe en azerty.</p>
 <h1>Changement des racourcis</h1>
 <h2>Identification du nouveau mappage</h2>
@@ -110,10 +110,10 @@
 <p>Et enfin, avec le modifier "alt":
 <img align="middle" alt "i3 personal configuration with space modifier" src="https://sklaxs.github.io/images/i3_alt.png" width=80%></p>
 <p>Vous pourrez remarquer que j'utilise au minimum les touches combinatoires imposant des positions de la main peu naturelles (sauf alt+shit+² car il s'agit ici d'un raccourci que l'on est sensé lancer "par erreur")</p>
-<h1>Un peu de technique si nécessaire…</h1>
+<h1>Un peu de technique pour vous aider à décortiquer / adapter mon script</h1>
 <h2>Changement de modificateur</h2>
-<p>Comme je vous le disais précédemment, l'usage d' «alt» ou «windows» comme touche de raccourcis i3 ne me plaisait pas de plus, il était hors de question de la remplacer par la touche «Carl », car ce n'aurais été que déplacer le problème. J'ai donc choisi la barre espace !</p>
-<p>Certains diront ", C'est bien joli, la barre espace, mais c'est un peu utile, genre un mot sur deux". Ils ont raison, c'est pourquoi j'ai utilisé le petit programme xcape dont l'installation est très bien expliquée sur le github de son concepteur : https://github.com/alols/xcape.</p>
+<p>Comme je vous le disais précédemment, l'usage d' «alt» ou «Windows» comme touche de raccourcis i3 ne me plaisait pas de plus, il était hors de question de la remplacer par une mise en doublon de la touche «ALT-GR », car ce n'aurais été que déplacer le problème. J'ai donc choisi la barre espace!
+C'est bien joli, la barre espace, mais contrairement à "alt" ou "Windows" elle génère un caractère. C'est là qu'intervient le petit programme xcape permettant de générer un caratère différent si la touche est pressée seule ou non. Son installation est très bien expliquée sur le github de son concepteur alols, je vous laisse donc vous y rendre : https://github.com/alols/xcape.</p>
 <p>Ensuite, à l'usage, c'est très simple :</p>
 <div class="highlight"><pre><span></span>keycodeNumber=&quot;65&quot; #keycode de la touche a laquelle on souhaite affecter une seconde fonction obtenu via l&#39;utilitaire «xev»
 simulatedKey=&quot;Hyper_L&quot; #caractère à générer lors de l’appui simultané de la touche avec une autre;
@@ -128,7 +128,7 @@ xcape -e &quot;<span class="cp">${</span><span class="n">simulatedKey</span><spa
 <p>Pour permettre d'alterner entre deux configurations clavier (ici azerty / bépo), j'ai réalisé un petit script qui réalise les actions suivantes :
 - définition de la barre espace comme "modificateur"
 - identification du mappage clavier actuel
-- bascule vers le clavier opposé avec un simple "setxkbmap"(sauf au démar rage pour forcer la bascule en bépo)
+- bascule vers le clavier opposé avec un simple "setxkbmap"(sauf au démarrage pour forcer la bascule en bépo)
 - mise en place du fichier de configuration d'i3 adapté à la nouvelle disposition
 - si bépo, modification de la touche "alt-gr" pour que le caractère "_" soit réalisé par une simple pression de cette touche.</p>
 <h3>Installation</h3>
