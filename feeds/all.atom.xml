@@ -14,7 +14,7 @@
 - permettre de switcher rapidement entre une dispo azerty et bepo pour par exemple passer la main à un autre utilisateur ou (c'est ici mon besoin) pouvoir saisir mes mots de passe en azerty.&lt;/p&gt;
 &lt;h1&gt;Changement des racourcis&lt;/h1&gt;
 &lt;h2&gt;Identification du nouveau mappage&lt;/h2&gt;
-&lt;p&gt;Ici, on traite du sujet le plus accessible : la révision du mappage des raccourcis d'i3. Comme un bon dessin vaux mieux qu'un long discourt, voici le mappage que j'ai défini dans ma configuration d'i3 avec le modifier "space":
+&lt;p&gt;Ici, on traite du sujet le plus accessible : la révision du mappage des raccourcis d'i3. Comme un bon dessin vaut mieux qu'un long discourt, voici le mappage que j'ai défini dans ma configuration d'i3 avec le modifier "space":
 &lt;img align="middle" alt "i3 personal configuration with space modifier" src="https://sklaxs.github.io//images/i3_space.png" width=80%&gt;&lt;/p&gt;
 &lt;p&gt;Avec la combinaison "shift + space":
 &lt;img align="middle" alt "i3 personal configuration with space modifier" src="https://sklaxs.github.io/images/i3_shift_space.png" width=80%&gt;&lt;/p&gt;
